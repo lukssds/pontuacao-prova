@@ -10,8 +10,8 @@ public class exerciciopontuacao {
 		Locale.setDefault(Locale.US);
 		Scanner sc= new Scanner(System.in);
 		
-		double ticketmedio,compras;
-		int atrasopagamento,volumedecompras ;
+		double ticketmedio;
+		int atrasopagamento,volumedecompras,compras,pontosin,pontospag=0 ;
 		char dcb;
 		
 		//cabeçalho
@@ -55,7 +55,36 @@ public class exerciciopontuacao {
 			compras=60;
 		}
 		System.out.println("Score de volume de compras = "+ compras + " pontos" );
+		System.out.println("");
 		
+		//scores de inadimplencia e pagamento
+		
+		if (volumedecompras ==0  || atrasopagamento > 1 ) {
+			
+			pontosin=0;
+		}
+		
+		else if (volumedecompras > 0  && atrasopagamento >=1) {
+			pontosin=15;
+			
+		}
+		else {
+			pontosin=30;
+		}
+		System.out.println("Score de inadimplência = "+pontosin + " pontos");
+		
+		//forma de pagamento
+		if (dcb == 'd' || dcb == 'D') {
+			
+			pontospag=5;
+			
+		}
+		else if (dcb == 'c' || dcb== 'b' || dcb=='C'|| dcb=='B' ) {
+			pontospag=10;
+			
+		}
+		
+		System.out.println("Score de forma de pagamento = " +pontospag);
 	}
 
 }
