@@ -10,8 +10,8 @@ public class exerciciopontuacao {
 		Locale.setDefault(Locale.US);
 		Scanner sc= new Scanner(System.in);
 		
-		double volumedecompras,ticketmedio;
-		int atrasopagamento;
+		double ticketmedio,compras;
+		int atrasopagamento,volumedecompras ;
 		char dcb;
 		
 		//cabeçalho
@@ -24,7 +24,7 @@ public class exerciciopontuacao {
 		//leitura de volume
 		
 		System.out.print("Quantas compras o cliente fez no último ano? ");
-		volumedecompras=sc.nextDouble();
+		volumedecompras=sc.nextInt();
 		System.out.print("Qual o ticket médio? ");
 		ticketmedio=sc.nextDouble();
 		
@@ -35,6 +35,26 @@ public class exerciciopontuacao {
 		atrasopagamento=sc.nextInt();
 		System.out.print("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
 		dcb=sc.next().charAt(0);
+		System.out.println("");
+		
+		//score de volume de compras
+		
+		if (ticketmedio == 0 ) {
+			
+			compras=0;
+		}
+		else if (ticketmedio <=3000.00 && volumedecompras <=2) {
+			
+			compras=20;
+		}
+		else if (ticketmedio <=3000.00 && volumedecompras > 2) {
+			compras=40;
+			
+		}
+		else {
+			compras=60;
+		}
+		System.out.println("Score de volume de compras = "+ compras + " pontos" );
 		
 	}
 
