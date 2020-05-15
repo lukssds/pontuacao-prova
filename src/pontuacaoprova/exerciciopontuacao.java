@@ -11,7 +11,7 @@ public class exerciciopontuacao {
 		Scanner sc= new Scanner(System.in);
 		
 		double ticketmedio;
-		int atrasopagamento,volumedecompras,compras,pontosin,pontospag=0 ;
+		int atrasopagamento,volumedecompras,compras,pontosin,pontospag=0,scoretotal;
 		char dcb;
 		
 		//cabeçalho
@@ -85,6 +85,22 @@ public class exerciciopontuacao {
 		}
 		
 		System.out.println("Score de forma de pagamento = " +pontospag);
+		System.out.println("");
+		
+		scoretotal=compras+pontosin+pontospag;
+		if (scoretotal > 0 && scoretotal <= 25) {
+			
+			System.out.println("Classificação final = CLIENTE BRONZE");
+			
+		}
+		else if (scoretotal > 25&& scoretotal< 75) {
+			System.out.println("Classificação final = CLIENTE PRATA");
+		}
+		
+		else {
+			System.out.println("Classificação final = CLIENTE OURO");
+		}
+			
 	}
 
 }
